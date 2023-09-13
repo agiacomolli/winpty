@@ -14,7 +14,7 @@ REM --  * msbuild           msbuild must be in the Path.  It is probably
 REM --                      important to have msbuild from the correct MSVC
 REM --                      release.
 REM --
-REM -- The script's output binaries are in the src/Release/{Win32,x64}
+REM -- The script's output binaries are in the src/Release/{Win32,x64,arm64}
 REM -- directory.
 
 REM -------------------------------------------------------------------------
@@ -28,7 +28,7 @@ set MSVC_PLATFORM=x64
 :ParamLoop
 if "%1" == "" goto :ParamDone
 if "%1" == "--msvc-platform" (
-    REM -- One of Win32 or x64.
+    REM -- One of Win32, x64 or arm64.
     set MSVC_PLATFORM=%2
     shift && shift
     goto :ParamLoop
